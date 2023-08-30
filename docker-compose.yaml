@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  app:
+    build: 
+      context: .
+    volumes:
+      - ./src:/app/src
+    tty: true
+    ports:
+      - 7860:7860
+    environment:
+      - GRADIO_SERVER_NAME=0.0.0.0
+    shm_size: '8gb'
